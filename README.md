@@ -1,3 +1,3 @@
 # Centrixlink-Unity-Plugin
 
-Will coming soon, please wait.
+is coming soon, please wait.
