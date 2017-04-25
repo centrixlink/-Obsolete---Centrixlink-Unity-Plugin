@@ -1,7 +1,5 @@
 # Centrixlink-Unity-Plugin
 
-# Centrixlink-Unity-Plugin
-
 ### 版本支持及依赖
 
 * Android 4.0以上系统版本（API LEVEL 14+）
