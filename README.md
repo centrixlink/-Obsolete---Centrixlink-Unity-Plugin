@@ -14,7 +14,11 @@
 ### 2.設定App ID、App Key
 (集成需要 Centrixlink 账户，因此，如果您没有 Centrixlink 账户，请创建 [Centrixlink 帐户)](https://dashboard.centrixlink.com/login)。
 
-菜單項目 Centrixlink->Config Setting
+<img src="http://i.imgur.com/cKEe1qo.png">
+
+填入您的App ID、App Key 之后点击save按钮
+
+<img src="http://i.imgur.com/zXTqVrN.png">
 
 填入您的App ID、App Key 之后点击save按钮
 ### 3.引用centrixlink命名空間
