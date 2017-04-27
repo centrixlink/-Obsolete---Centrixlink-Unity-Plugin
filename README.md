@@ -9,7 +9,7 @@
 
 ### 集成说明
 
-### 1.Import centrix.package
+### 1.Import centrixlinkADs.package
 
 ### 2.設定App ID、App Key
 (集成需要 Centrixlink 账户，因此，如果您没有 Centrixlink 账户，请创建 [Centrixlink 帐户)](https://dashboard.centrixlink.com/login)。
@@ -20,7 +20,6 @@
 
 <img src="http://i.imgur.com/zXTqVrN.png">
 
-填入您的App ID、App Key 之后点击save按钮
 ### 3.引用centrixlink命名空間
 ``` C#
 using Centrixlink.Advertisements;
@@ -37,7 +36,7 @@ public void OnLogCall(string log, LogLevel level)
  }
 ```
 你可以这样做
-```	C
+```	C#
 //有收到log時會调用
 Advertisement.AddOnLogProcListeners (OnLog);
 
@@ -59,15 +58,15 @@ public void OnLog(string log, LogLevel level)
 }
 ```
 ### 5.設定广告准备状态回呼及初始化Centrixlink SDK
-初始化仅需要被调用一次，并且用于使 Centrixlink Unity 插件做好准备以向用户呈现广告。<font color="red">尽可能愈早地在您的应用程序中初始化 Centrixlink SDK，因为 SDK 将需要 數十秒进行初始化并缓存广告以供播放</font>，可播放影片时会调用回呼
+初始化仅需要被调用一次，并且用于使 Centrixlink Unity 插件做好准备以向用户呈现广告。<font color="red">尽可能愈早地在您的应用程序中初始化 Centrixlink SDK，因为 SDK 将需要 數十秒进行初始化并缓存广告以供播放</font>，可播放影片时会调用回呼，<font color="red">建議在初始化前先設定回呼</font>
 
 ``` C#
 //广告视频下载成功后会调用回呼
 Advertisement.AddOnAdPlayableChangeds(OnAdPlayableChanged);
 public void OnAdPlayableChanged(bool isAdPlayable)
 {
-	if (isAdPlayable)
-	mAdIsReady = true;
+	//收到回呼时的处理 （ isAdPlayable为視屏是否能播放）
+
 }
 
 Advertisement.Init ();
@@ -111,9 +110,12 @@ public void OnAdUnavailable(string reason)
 
 ### 移除已存在的回呼
 ``` C#
-Advertisement.RemoveOnLogProcListeners(myCallback);
-Advertisement.RemoveOnAdPlayableChangeds(myCallback );
-Advertisement.RemoveOnAdStarts(myCallback );
-Advertisement.RemoveOnAdEnds(myCallback );
-Advertisement.RemoveOnAdUnavailables(myCallback );
+OnDestroy()
+{
+	Advertisement.RemoveOnLogProcListeners(myCallback);
+	Advertisement.RemoveOnAdPlayableChangeds(myCallback );
+	Advertisement.RemoveOnAdStarts(myCallback );
+	Advertisement.RemoveOnAdEnds(myCallback );
+	Advertisement.RemoveOnAdUnavailables(myCallback );
+}
 ```
