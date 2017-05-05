@@ -61,12 +61,8 @@ Advertisement.Init ();
 //播放全屏广告
 Advertisement.FetchAD ();
 
-//播放非全屏广告(默認大小及位置)
+//播放非全屏广告
 Advertisement.FetchInterstitialAD ();
-
-//播放非全屏广告 目前仅支援Android
-//上边距, 左边距, 短边占比(例如：在竖屏模式下，指的是视频广告播放窗口宽度占整个屏幕宽的比例，反之横屏模式下是指视频广告播放窗口高度占整个屏幕高的比例)
-Advertisement.FetchInterstitialAD (top, left, scale);
 
 ```
 
