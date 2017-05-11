@@ -61,8 +61,13 @@ Advertisement.Init ();
 //播放全屏广告
 Advertisement.FetchAD ();
 
-//播放非全屏广告
+//播放非全屏广告(默認大小及位置)
 Advertisement.FetchInterstitialAD ();
+
+//客製化播放非全屏广告
+//上边距, 左边距, 短边占比(例如：在竖屏模式下，指的是视频广告播放窗口宽度占整个屏幕宽的比例，反之横屏模式下是指视频广告播放窗口高度占整个屏幕高的比例)
+//若參數為(0,0,0)(1,0,0)(0,1,0),(0,0,1)則視頻為中央最大顯示
+Advertisement.FetchInterstitialAD (top, left, scale);
 
 ```
 
