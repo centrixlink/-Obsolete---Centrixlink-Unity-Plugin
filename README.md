@@ -15,7 +15,7 @@
 
 1.菜單項目 Centrixlink->Config Setting
 
-<img src="http://i.imgur.com/muPqxQE.png" width="200">
+<img src="http://i.imgur.com/MqnOcQJ.png" width="200">
 
 2.填入您的App ID、App Key 之后点击save按钮
 
