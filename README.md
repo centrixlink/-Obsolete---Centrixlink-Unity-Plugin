@@ -1,15 +1,16 @@
 # Centrixlink-Unity-Plugin
 
 ### 版本支持及依赖
-
+* Centrixlink-Unity-Plugin 1.1基于Android SDK 2.3与iOS SDK 2.3版本开发;
 * Android 4.0以上系统版本（API LEVEL 14+）
 * iOS7以上系统版本
-* Unity5.0.1以上系统版本
+* Unity4.6.0以上系统版本
+
 * 申请：[App ID、App Key](https://dashboard.centrixlink.com/login)
 
 ### 集成说明
 
-### 1.导入適合版本的CentrixlinkAds.unitypackage
+### 1.请依据你的unity版本，导入合适的CentrixlinkAds.unitypackage版本
 
 ### 2.設定App ID、App Key
 
@@ -33,7 +34,7 @@ Advertisement.AddOnDebugLogEvent (OnDebugLog);
 
 public void OnDebugLog(string errorMsg)
 {
-//收到回呼时的处理 （errorMsg 为CentrixlinkAds的錯誤信息）
+    //收到回呼时的处理 （errorMsg 为CentrixlinkAds的錯誤信息）
 }
 ```
 
@@ -44,7 +45,7 @@ public void OnDebugLog(string errorMsg)
 Advertisement.AddOnHasPreloadADEvent(OnAdPlayableChanged);
 public void OnAdPlayableChanged(bool isAdPlayable)
 {
-//收到回呼时的处理 （isAdPlayable 为广告视频是否己能播放）
+    //收到回呼时的处理 （isAdPlayable 为广告视频是否己能播放）
 }
 ```
 
@@ -76,14 +77,14 @@ Advertisement.PlayUnFullScreenAD (top, left, scale);
 ``` C#
 void OnApplicationPause(bool pauseStatus)
 {
-if (pauseStatus)
-{
-Advertisement.OnPause ();
-}
-else
-{
-Advertisement.OnResume ();
-}
+    if (pauseStatus)
+    {
+        Advertisement.OnPause ();
+    }
+    else
+    {
+        Advertisement.OnResume ();
+    }
 }
 ```
 
@@ -102,35 +103,35 @@ centrixlink.setEnableFollowAppOrientation(enable);
 Advertisement.AddOnVideoADWillShowEvent (OnVideoADWillShow);
 public void OnVideoADWillShow(Hashtable hashtable)
 {
-//收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
+    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
 }
 
 //加入视频广告成功显示的回呼事件
 Advertisement.AddOnVideoADDidShowEvent (OnVideoADDidShow);
 public void OnVideoADDidShow(Hashtable hashtable )
 {
-//收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
+    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
 }
 
 //加入视频广告关闭的回呼事件
 Advertisement.AddOnVideoADCloseEvent (OnVideoADClose);
 public void OnVideoADClose(Hashtable hashtable)
 {
-//收到事件时的处理（Hashtable內有: ADID(string)广告ID, playFinished(bool)是否完整播放, isAction(bool)是否點擊）
+    //收到事件时的处理（Hashtable內有: ADID(string)广告ID, playFinished(bool)是否完整播放, isAction(bool)是否點擊）
 }
 
 //加入视频广告显示失败的回呼事件
 Advertisement.AddOnVideoADShowFailEvent (OnVideoADShowFail);
 public void OnVideoADShowFail(Hashtable hashtable )
 {
-//收到事件时的处理（Hashtable內有: error(ADPlayError)錯誤信息物件）
+    //收到事件时的处理（Hashtable內有: error(ADPlayError)錯誤信息物件）
 }
 
 //加入视频广告关闭的回呼事件
 Advertisement.AddOnVideoADActionEvent (OnVideoADAction);
 public void OnVideoADAction( )
 {
-//收到事件时的处理
+    //收到事件时的处理
 }
 ```
 
@@ -140,42 +141,42 @@ public void OnVideoADAction( )
 Advertisement.AddSplashADDidShowEvent (OnSplashADDidShow);
 public void OnSplashADDidShow(Hashtable hashtable)
 {
-//收到事件时的处理（Hashtable內有:ADID(string)广告ID, playFinished(bool)是否完整播放, isAction(bool)是否點击）
+    //收到事件时的处理（Hashtable內有:ADID(string)广告ID, playFinished(bool)是否完整播放, isAction(bool)是否點击）
 }
 
 //加入開屏广告关闭的回呼事件
 Advertisement.AddOnSplashADClosedEvent (OnSplashADClosed);
 public void OnSplashADClosed(Hashtable hashtable)
 {
-//收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
+    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
 }
 
 //加入開屏广告失敗的回呼事件
 Advertisement.AddOnVideoADShowFailEvent (OnVideoADShowFail);
 public void OnVideoADShowFail(ADPlayError adPlayError)
 {
-//收到事件时的处理（adPlayError(ADPlayError)錯誤信息物件）
+    //收到事件时的处理（adPlayError(ADPlayError)錯誤信息物件）
 }
 
 //加入视频广告触发了点击的回呼事件
 Advertisement.AddOnSplashADActionEvent (OnSplashADAction);
 public void OnSplashADAction()
 {
-//收到事件时的处理
+    //收到事件时的处理
 }
 
 //加入视频广告完成的回呼事件(IOS無此回乎)
 Advertisement.AddOnVideoADFinishedEvent (OnVideoADFinished);
 public void OnVideoADFinished(Hashtable hashtable)
 {
-//收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
+    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
 }
 
 //加入视频广告略過的回呼事件(IOS無此回乎)
 Advertisement.AddOnVideoADSkipEvent (OnVideoADSkip);
 public void OnVideoADSkip(Hashtable hashtable)
 {
-//收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
+    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
 }
 
 ```
