@@ -4,6 +4,8 @@
 
 ### 集成说明
 
+[API參考文件](https://unity-doc.centrixlink.com/v1-1/index.html)
+
 ### 1.请依据你的unity版本，导入合适的CentrixlinkAds.unitypackage版本
 
 ### 2.設定App ID、App Key
@@ -219,13 +221,17 @@ Advertisement.ClearOnSplashADSkipEvent (Action< Hashtable > removeCallback)
 <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
 <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="true" />
 ```
-若你没更改过预设的Activity及Manifest样版 可照以下方式修改
+<font color="red">若你没更改过预设的Activity及Manifest样版 可照以下方式修改</font>
 
-1.找到默认的Manifest样板
-MAC:/Applications/Unity/Unity.app/Contents/PlaybackEngines/AndroidPlayer/AndroidManifest.xml  
-WINDOWS: C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\AndroidManifest.xml on Windows. 
+#### 1.找到默认的Manifest样板
+MAC位置:  
+/Applications/Unity/Unity.app/Contents/PlaybackEngines/AndroidPlayer/AndroidManifest.xml  
 
-2.加入以下代码
+WINDOWS位置:  
+C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\AndroidManifest.xml 
+
+#### 2.加入以下代码
+
 <img src="http://i.imgur.com/cTWZt2M.png" width="600">
 
 
