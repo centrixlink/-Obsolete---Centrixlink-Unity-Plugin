@@ -1,7 +1,16 @@
 var searchData=
 [
-  ['addonadends',['AddOnAdEnds',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#addcc40ad9bd47eb8cc5a1e7871b6a203',1,'Centrixlink::Advertisements::Advertisement']]],
-  ['addonadplayablechangeds',['AddOnAdPlayableChangeds',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a9a152da41ffa9fbe8ea1fe402220fa7e',1,'Centrixlink::Advertisements::Advertisement']]],
-  ['addonadstarts',['AddOnAdStarts',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a61dab451b3d9469ac8ac28d6f5dde158',1,'Centrixlink::Advertisements::Advertisement']]],
-  ['addonerrors',['AddOnErrors',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#af5586ec067e8a826f2a0308f3598cc8b',1,'Centrixlink::Advertisements::Advertisement']]]
+  ['addondebuglogevent',['AddOnDebugLogEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#ab0b16997d791970a0bb6f97d47fece15',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonhaspreloadadevent',['AddOnHasPreloadADEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a8f346d9f6d13be6d49d251014c5e6d3f',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonsplashadactionevent',['AddOnSplashADActionEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a9bff6db847d0bcbb22495a006fbc5469',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonsplashadclosedevent',['AddOnSplashADClosedEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#adb0ce42c447bd88e3ce2c0d91e1a9336',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonsplashaddidshowevent',['AddOnSplashADDidShowEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a15c926b36f038d6063c47ef9dbbefd27',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonsplashadfinishedevent',['AddOnSplashADFinishedEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#abbe647f60fb0f5f665cfdf4669814fba',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonsplashadshowfailevent',['AddOnSplashADShowFailEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a7a9f587060ed2ad7b4d9a6f4359fbef7',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonsplashadskipevent',['AddOnSplashADSkipEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a0a9282bccec608c96086b64184c0c2b7',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonvideoadactionevent',['AddOnVideoADActionEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#ae388b1a26494c37266707a1489c975f1',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonvideoadcloseevent',['AddOnVideoADCloseEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a82906b23dfe0e3dbba878b7558e7308b',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonvideoaddidshowevent',['AddOnVideoADDidShowEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a3ae5350aacb116e2c0557a8451044727',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonvideoadshowfailevent',['AddOnVideoADShowFailEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a0d8dbfd1998581c1e9fc068b44915bc0',1,'Centrixlink::Advertisements::Advertisement']]],
+  ['addonvideoadwillshowevent',['AddOnVideoADWillShowEvent',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a0a6ef6840cf942fcdb23c96e95bd1c72',1,'Centrixlink::Advertisements::Advertisement']]]
 ];
