@@ -1,18 +1,14 @@
 # Centrixlink-Unity-Plugin
 
-### 版本支持及依赖
-* Centrixlink-Unity-Plugin 1.1基于Android SDK 2.3与iOS SDK 2.3版本开发;
-* Android 4.0以上系统版本（API LEVEL 14+）
-* iOS7以上系统版本
-* Unity4.6.0以上系统版本
 
-* 申请：[App ID、App Key](https://dashboard.centrixlink.com/login)
 
 ### 集成说明
 
 ### 1.请依据你的unity版本，导入合适的CentrixlinkAds.unitypackage版本
 
 ### 2.設定App ID、App Key
+
+* 申请：[App ID、App Key](https://dashboard.centrixlink.com/login)
 
 1.菜單項目 Centrixlink->Config Setting
 
@@ -231,3 +227,5 @@ WINDOWS: C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Androi
 
 2.加入以下代码
 <img src="http://i.imgur.com/cTWZt2M.png" width="600">
+
+
