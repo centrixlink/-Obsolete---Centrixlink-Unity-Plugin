@@ -203,14 +203,14 @@ Advertisement.ClearOnHasPreloadADEvent (Action< bool > removeCallback);
 Advertisement.ClearOnVideoADWillShowEvent (Action< Hashtable > removeCallback)
 Advertisement.ClearOnVideoADDidShowEvent (Action< Hashtable > removeCallback)
 Advertisement.ClearOnVideoADCloseEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearOnVideoADShowFailEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearOnVideoADActionEvent (Action removeCallback)
+Advertisement.ClearVideoADShowFailEvent (Action< Hashtable > removeCallback)
+Advertisement.ClearVideoADActionEvent (Action removeCallback)
 Advertisement.ClearOnSplashADDidShowEvent (Action< Hashtable > removeCallback)
 Advertisement.ClearOnSplashADActionEvent (Action removeCallback)
 Advertisement.ClearOnSplashADShowFailEvent (Action< ADPlayError > removeCallback)
 Advertisement.ClearOnSplashADClosedEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearOnSplashADFinishedEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearOnSplashADSkipEvent (Action< Hashtable > removeCallback)
+Advertisement.ClearSplashADFinishedEvent (Action< Hashtable > removeCallback)
+Advertisement.ClearSplashADSkipEvent (Action< Hashtable > removeCallback)
 ```
 
 ### Unity4.X 注意事項
