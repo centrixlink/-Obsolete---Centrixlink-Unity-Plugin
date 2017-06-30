@@ -1,9 +1,9 @@
 ## CHANGELOG
-### 1.0.0-20170626
+### 1.1.0-20170626
 
 ##### Unity Plugin 1.1.0正式上线
 
-1. unity plugin 1.1.0基于最新的Android SDK 2.3与iOS SDK 2.3版本开发;
+1. unity plugin 1.1.0基于最新的Android SDK 2.3.1与iOS SDK 2.3版本开发;
 
 2. unity plugin 1.1.0目前支持视频广告形式（全屏与非全屏）以及开屏图片广告形式;
 
