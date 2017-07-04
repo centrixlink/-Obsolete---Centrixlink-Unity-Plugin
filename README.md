@@ -70,6 +70,11 @@ Advertisement.PlayUnFullScreenAD (top, left, scale);
 
 ```
 
+### 8.PlayerSetting 注意事项
+
+将Minimun API Level  设置为Android4.0以上
+<img src="http://i.imgur.com/vbBX2q9.png" width="500">
+
 ###	Unity應用程序生命周期与SDK关联处理
 请在unity应用程序生命周期变更时调用
 ``` C#
