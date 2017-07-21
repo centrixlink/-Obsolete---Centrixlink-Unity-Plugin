@@ -4,7 +4,7 @@
 
 ### 集成说明
 
-[API參考文件](https://unity-doc.centrixlink.com/v1-1/index.html)
+[API參考文件](https://unity-doc.centrixlink.com/v1-2/index.html)
 
 ### 1.请依据你的unity版本，导入合适的CentrixlinkAds.unitypackage版本
 
@@ -24,24 +24,26 @@
 ``` C#
 using Centrixlink.Advertisements;
 ```
-### 4.設定錯誤回呼
+
+### 4.設定錯誤回呼事件List
 CentrixlinkAds能让你处理来自CentrixlinkAds的錯誤信息 而不是直接输出
+
 ```	C#
+//若有需要使用 可对List<Action<string>> onDebugLogEvents 做操作
 //CentrixlinkAds回传錯誤信息時會调用
-Advertisement.AddOnDebugLogEvent (OnDebugLog);
+Advertisement.onDebugLogEvents.Add(OnDebugLog);
 
-public void OnDebugLog(string errorMsg)
+private void OnDebugLog(string message)
 {
-    //收到回呼时的处理 （errorMsg 为CentrixlinkAds的錯誤信息）
-}
+    //收到回呼时的处理 （message 为CentrixlinkAds的錯誤信息）
+} 
 ```
-
-### 5.設定广告准备状态回呼
-
+### 5.設定广告准备状态回呼事件List
 ``` C#
-//广告视频準備狀態调用回呼
-Advertisement.AddOnHasPreloadADEvent(OnAdPlayableChanged);
-public void OnAdPlayableChanged(bool isAdPlayable)
+//List<Action<bool>> onHasPreloadADEvents
+//本地是否有预加载广告變化的回呼
+Advertisement.onHasPreloadADEvents.Add(OnAdPlayableChanged);
+private void OnAdPlayableChanged(bool isAdPlayable)
 {
     //收到回呼时的处理 （isAdPlayable 为广告视频是否己能播放）
 }
@@ -76,22 +78,6 @@ Advertisement.PlayUnFullScreenAD (top, left, scale);
 
 <img src="http://i.imgur.com/vbBX2q9.png" width="500">
 
-###	Unity應用程序生命周期与SDK关联处理
-请在unity应用程序生命周期变更时调用
-``` C#
-void OnApplicationPause(bool pauseStatus)
-{
-    if (pauseStatus)
-    {
-        Advertisement.OnPause ();
-    }
-    else
-    {
-        Advertisement.OnResume ();
-    }
-}
-```
-
 ### 设置全屏視頻是否跟随应用方向
 ``` C#
 /**
@@ -101,123 +87,50 @@ void OnApplicationPause(bool pauseStatus)
 centrixlink.setEnableFollowAppOrientation(enable);
 ```
 
-### 設定視頻回呼
+### 設定視頻回呼事件List
 ``` C#
-//加入视频广告即将显示的回呼事件
-Advertisement.AddOnVideoADWillShowEvent (OnVideoADWillShow);
-public void OnVideoADWillShow(Hashtable hashtable)
-{
-    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
-}
+//视频广告即将显示的回呼事件List
+//string 广告ID
+public static List<Action<string>> onVideoADWillShowEvents;
 
-//加入视频广告成功显示的回呼事件
-Advertisement.AddOnVideoADDidShowEvent (OnVideoADDidShow);
-public void OnVideoADDidShow(Hashtable hashtable )
-{
-    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
-}
+//视频广告成功显示的回呼事件List
+//string 广告ID
+public static List<Action<string>> onVideoADDidShowEvents
 
-//加入视频广告关闭的回呼事件
-Advertisement.AddOnVideoADCloseEvent (OnVideoADClose);
-public void OnVideoADClose(Hashtable hashtable)
-{
-    //收到事件时的处理（Hashtable內有: ADID(string)广告ID, playFinished(bool)是否完整播放, isAction(bool)是否點擊）
-}
+//视频广告关闭的回呼事件List
+//string 广告ID, bool 是否完整播放, bool 是否點擊
+public static List<Action<string, bool, bool>> onVideoADCloseEvents
 
-//加入视频广告显示失败的回呼事件
-Advertisement.AddOnVideoADShowFailEvent (OnVideoADShowFail);
-public void OnVideoADShowFail(Hashtable hashtable )
-{
-    //收到事件时的处理（Hashtable內有: error(ADPlayError)錯誤信息物件）
-}
+//视频广告失敗的回呼事件List
+//ADPlayError 錯誤信息物件
+public static List<Action<ADPlayError>> onVideoADShowFailEvents
 
-//加入视频广告关闭的回呼事件
-Advertisement.AddOnVideoADActionEvent (OnVideoADAction);
-public void OnVideoADAction( )
-{
-    //收到事件时的处理
-}
+//视频广告点击的回呼事件List
+public static List<Action> onVideoADActionEvents = new List<Action>();
 ```
 
 ### 設定開屏回呼
 ``` C#
-//加入開屏广告显示的回呼事件
-Advertisement.AddSplashADDidShowEvent (OnSplashADDidShow);
-public void OnSplashADDidShow(Hashtable hashtable)
-{
-    //收到事件时的处理（Hashtable內有:ADID(string)广告ID, playFinished(bool)是否完整播放, isAction(bool)是否點击）
-}
+//開屏广告显示的回呼事件List
+//string 广告ID
+public static List<Action<string>> onSplashADDidShowEvents;
 
-//加入開屏广告关闭的回呼事件
-Advertisement.AddOnSplashADClosedEvent (OnSplashADClosed);
-public void OnSplashADClosed(Hashtable hashtable)
-{
-    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
-}
+//開屏广告点击的回呼事件List
+public static List<Action> onSplashADActionEvents;
 
-//加入開屏广告失敗的回呼事件
-Advertisement.AddOnVideoADShowFailEvent (OnVideoADShowFail);
-public void OnVideoADShowFail(ADPlayError adPlayError)
-{
-    //收到事件时的处理（adPlayError(ADPlayError)錯誤信息物件）
-}
+//開屏广告失敗的回呼事件List
+//ADPlayError 錯誤信息物件
+public static List<Action<ADPlayError>> onSplashADShowFailEvents;
 
-//加入视频广告触发了点击的回呼事件
-Advertisement.AddOnSplashADActionEvent (OnSplashADAction);
-public void OnSplashADAction()
-{
-    //收到事件时的处理
-}
+//開屏广告关闭的回呼事件List
+//string 广告ID, bool 是否完整播放, bool 是否點擊, bool 是否略過
+public static List<Action<string, bool, bool, bool>> onSplashADClosedEvents;
 
-//加入视频广告完成的回呼事件(IOS無此回乎)
-Advertisement.AddOnVideoADFinishedEvent (OnVideoADFinished);
-public void OnVideoADFinished(Hashtable hashtable)
-{
-    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
-}
-
-//加入视频广告略過的回呼事件(IOS無此回乎)
-Advertisement.AddOnVideoADSkipEvent (OnVideoADSkip);
-public void OnVideoADSkip(Hashtable hashtable)
-{
-    //收到事件时的处理（Hashtable內有:ADID:(string) 广告ID）
-}
-
+//開屏广告略過的回呼事件List
+//string 广告ID
+public static List<Action<string>> onSplashADSkipEvents;
 ```
 
-### 移除回呼
-``` C#
-Advertisement.RemoveOnDebugLogEvent (Action< string > removeCallback)
-Advertisement.RemoveOnHasPreloadADEvent (Action< bool > removeCallback);
-Advertisement.RemoveOnVideoADWillShowEvent (Action< Hashtable > removeCallback)
-Advertisement.RemoveOnVideoADDidShowEvent (Action< Hashtable > removeCallback)
-Advertisement.RemoveOnVideoADCloseEvent (Action< Hashtable > removeCallback)
-Advertisement.RemoveOnVideoADShowFailEvent (Action< Hashtable > removeCallback)
-Advertisement.RemoveOnVideoADActionEvent (Action removeCallback)
-Advertisement.RemoveOnSplashADDidShowEvent (Action< Hashtable > removeCallback)
-Advertisement.RemoveOnSplashADActionEvent (Action removeCallback)
-Advertisement.RemoveOnSplashADShowFailEvent (Action< ADPlayError > removeCallback)
-Advertisement.RemoveOnSplashADClosedEvent (Action< Hashtable > removeCallback)
-Advertisement.RemoveOnSplashADFinishedEvent (Action< Hashtable > removeCallback)
-Advertisement.RemoveOnSplashADSkipEvent (Action< Hashtable > removeCallback)
-```
-
-### 清空回呼
-``` C#
-Advertisement.ClearOnDebugLogEvent (Action< string > removeCallback)
-Advertisement.ClearOnHasPreloadADEvent (Action< bool > removeCallback);
-Advertisement.ClearOnVideoADWillShowEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearOnVideoADDidShowEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearOnVideoADCloseEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearVideoADShowFailEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearVideoADActionEvent (Action removeCallback)
-Advertisement.ClearOnSplashADDidShowEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearOnSplashADActionEvent (Action removeCallback)
-Advertisement.ClearOnSplashADShowFailEvent (Action< ADPlayError > removeCallback)
-Advertisement.ClearOnSplashADClosedEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearSplashADFinishedEvent (Action< Hashtable > removeCallback)
-Advertisement.ClearSplashADSkipEvent (Action< Hashtable > removeCallback)
-```
 
 ### Unity4.X 注意事項
 #### Android Manifest設定
@@ -239,5 +152,6 @@ C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\AndroidManifest
 #### 2.加入以下代码
 
 <img src="http://i.imgur.com/cTWZt2M.png" width="600">
+
 
 

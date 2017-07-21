@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init',['Init',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#adeb56d05b13b20c7062018f1111eed17',1,'Centrixlink::Advertisements::Advertisement']]]
+  ['setenablefollowapporientation',['SetEnableFollowAppOrientation',['../class_centrixlink_1_1_advertisements_1_1_advertisement.html#a3bbe430a82ad32f75ece31cc2af046fe',1,'Centrixlink::Advertisements::Advertisement']]]
 ];
