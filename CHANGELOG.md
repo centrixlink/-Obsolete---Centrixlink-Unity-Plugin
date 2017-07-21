@@ -3,11 +3,11 @@
 
 ##### Unity Plugin 1.2.0正式上线
 
-1. unity plugin 1.1.0基于最新的Android SDK 2.4与iOS SDK 2.4版本开发;
+1. unity plugin 1.2.0基于最新的Android SDK 2.4与iOS SDK 2.4版本开发;
 
-2. unity plugin 1.1.0目前支持视频广告形式（全屏与非全屏）以及开屏图片广告形式;
+2. unity plugin 1.2.0目前支持视频广告形式（全屏与非全屏）以及开屏图片广告形式;
 
-3. unity plugin 1.1.0系统版本支持及依赖：
+3. unity plugin 1.2.0系统版本支持及依赖：
         
         a) Android 4.0以上系统版本（API LEVEL 14+）
         b) iOS7以上系统版本

@@ -106,7 +106,7 @@ public static List<Action<string, bool, bool>> onVideoADCloseEvents
 public static List<Action<ADPlayError>> onVideoADShowFailEvents
 
 //视频广告点击的回呼事件List
-public static List<Action> onVideoADActionEvents = new List<Action>();
+public static List<Action> onVideoADActionEvents;
 ```
 
 ### 設定開屏回呼
