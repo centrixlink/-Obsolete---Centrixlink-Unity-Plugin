@@ -131,6 +131,10 @@ public static List<Action<string, bool, bool, bool>> onSplashADClosedEvents;
 public static List<Action<string>> onSplashADSkipEvents;
 ```
 
+### Unity5.3 以上版本注意事項
+#### 請將Plugins/Android/assets 資料夾刪除
+
+<img src="http://i.imgur.com/jJwAznE.png" width="600">
 
 ### Unity4.X 注意事項
 #### Android Manifest設定
@@ -152,6 +156,3 @@ C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\AndroidManifest
 #### 2.加入以下代码
 
 <img src="http://i.imgur.com/cTWZt2M.png" width="600">
-
-
-
