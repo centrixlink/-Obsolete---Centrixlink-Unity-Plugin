@@ -84,7 +84,7 @@ Advertisement.PlayUnFullScreenAD (top, left, scale);
 设置是否跟随应用方向
 @param boolead enable android默认值为true ios默认值为false;
 */
-centrixlink.setEnableFollowAppOrientation(enable);
+Advertisement.SetEnableFollowAppOrientation(enable);
 ```
 
 ### 設定視頻回呼事件List
